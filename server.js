@@ -1,15 +1,21 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const session = require('express-session');
 const path = require('path');
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 const port = 3000;
 
 // Basic middleware setup
 app.use(cors());
+
+app.use(cors({
+  origin: 'https://bejay-2004.github.io/the-final/'
+}));
+
 app.use(bodyParser.json());
 
 // Session middleware

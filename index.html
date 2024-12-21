@@ -191,6 +191,13 @@
     <p class="notification" style="display:none;"></p>
 </section>
 
+    <script> const backendUrl = "https://wst-backend-1.onrender.com";
+        fetch(`${backendUrl}/api/endpoint`)
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error("Error:", error));
+        </script>
+
     <!-- Footer Section -->
     <footer>
         <div class="footer-links">
